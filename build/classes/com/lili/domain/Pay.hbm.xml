@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-1-5 15:21:50 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lili.domain.Pay" table="pay" catalog="vcdb">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id">
+                <comment>&#182;&#212;&#211;&#166;user&#177;&#237;&#181;&#196;id</comment>
+            </column>
+        </property>
+        <property name="VAmount" type="java.lang.Integer">
+            <column name="v_amount">
+                <comment>&#214;&#167;&#184;&#182;&#208;&#233;&#196;&#226;&#177;&#210;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="gameId" type="java.lang.Integer">
+            <column name="game_id">
+                <comment>&#211;&#206;&#207;&#183;ID&#163;&#172;&#182;&#212;&#211;&#166;game_info&#181;&#196;id</comment>
+            </column>
+        </property>
+        <property name="gameUserId" type="java.lang.Integer">
+            <column name="game_user_id">
+                <comment>
+                &#182;&#212;&#211;&#166;&#211;&#206;&#207;&#183;&#181;&#196;&#211;&#195;&#187;&#167;id&#163;&#172;&#182;&#212;&#211;&#166;game_user&#181;&#196;id</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#214;&#167;&#184;&#182;&#215;&#180;&#204;&#172;,0-&#179;&#201;&#185;&#166;,1-&#202;&#167;&#176;&#220;</comment>
+            </column>
+        </property>
+        <property name="payTime" type="timestamp">
+            <column name="pay_time" length="19">
+                <comment>&#214;&#167;&#184;&#182;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

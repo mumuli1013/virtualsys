@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+<constant name="struts.action.excludePattern" value="/dwr.*"></constant>
+    <package name="ssh" extends="struts-default" namespace="/">
+        <action name="userAction_*" class="userAction" method="{1}">
+            <result name="loginSuccess">/user/index.jsp</result>
+            <result name="loginUI">/user/login.jsp</result>
+            <result name="adminloginUI">/admin/login.jsp</result>
+            <result name="superAdminloginUI">/sadmin/login.jsp</result>
+            <result name="registerUI">/user/register.jsp</result>
+            <result name="forgetPwdUI">/user/isExistName.jsp</result>
+            <result name="existSuccess" type="redirectAction">userAction_forgetUI.action</result>
+            <result name="forgetUI">/user/forget.jsp</result>
+            <result name="forgetUpdateSuccess">/user/login.jsp</result>
+            <result name="updatePwdUI">/user/securitySetting.jsp</result>
+            <result name="userInfoUI">/user/userInfo.jsp</result>
+            <result name="updateSuccess" type="redirectAction">userAction_userInfoUI.action</result>
+            <result name="adminUI">/admin/index.jsp</result>
+            <result name="superAdminUI">/sadmin/index.jsp</result>
+            <result name="updatePwdUI">/user/updatePwd.jsp</result>
+            <result name="userlist">/user/userlist.jsp</result>
+            <result name="deleteSuccess" type="redirectAction">userAction_findAllByRole.action?role=${#session.role}</result>
+            <result name="adminList" type="redirectAction">userAction_findAllByRole.action?role=1</result>
+            <result name="editSuccess">/user/edit.jsp</result>
+            <result name="updateUserSuccess" type="redirectAction">userAction_findAllByRole.action?role=${#session.role}</result>
+            <result name="noUser">/user/login.jsp</result>
+            <result name="editUI">/user/edit.jsp</result>
+            <result name="addAdminUI">/sadmin/addAdmin.jsp</result>
+        </action>
+        <action name="checkImgAction" class="checkImgAction">
+        
+        </action>
+        
+        <action name="gameClassAction_*" class="gameClassAction" method="{1}">
+            <result name="input">/game/add.jsp</result>
+            <result name="addSuccess">/game/add.jsp</result>
+            <result name="findAll">/game/gameClass.jsp</result>
+            <result name="addUI">/game/add.jsp</result>
+            <result name="editSuccess">/game/editGameClass.jsp</result>
+            <result name="updateSuccess" type="redirectAction">gameClassAction_findAll.action</result>
+        </action>
+        
+        <action name="gameInfoAction_*" class="gameInfoAction" method="{1}">
+            <result name="input">/game/addGame.jsp</result>
+            <result name="addGameUI">/game/addGame.jsp</result>
+            <result name="addSuccess" type="redirectAction">gameInfoAction_findAll.action</result>
+            <result name="findAll">/game/gameList.jsp</result>
+            <result name="editSuccess">/game/editGameInfo.jsp</result>
+            <result name="updateSuccess" type="redirectAction">gameInfoAction_findAll.action</result>
+            <result name="deleteSuccess" type="redirectAction">gameInfoAction_findAll.action</result>
+            <result name="gameInfoUI">/game/gameInfo.jsp</result>
+        </action>
+        
+        <action name="gameUserAction_*" class="gameUserAction" method="{1}">
+            <result name="findAll">/game/gameUser.jsp</result>
+            <result name="findByGIdUI">/game/GUserByGIdUI.jsp</result>
+        </action>
+        
+        <action name="payAction_*" class="payAction" method="{1}">
+            <result name="findOwnerUI">/pay/findOwnerUI.jsp</result>
+            <result name="findOwnerByStatusUI">/pay/findOwnerByStatusUI.jsp</result>
+            <result name="findAllUI">/pay/findAllUI.jsp</result>
+            <result name="findAllByStatusUI">/pay/findAllByStatusUI.jsp</result>
+            <result name="payUI">/pay/pay.jsp</result>
+            <result name="findOwnerActionUI" type="redirectAction">payAction_findById.action?userId=${#session.existUser.id}</result>
+            <result name="payError" type="redirectAction">payAction_PayUI.action</result>
+            <result name="findByGIdUI">/pay/findByGIdUI.jsp</result>
+            <result name="findTimeUI">/pay/findTimeUI.jsp</result>
+            <result name="findGIdByTimeUI">/pay/findGIdByTimeUI.jsp</result>
+            <result name="findGIdByStatusUI">/pay/findGIdByStatusUI.jsp</result>
+            <result name="findAllByTimeUI">/pay/findAllByTimeUI.jsp</result>
+            <result name="findCount">/pay/findCount.jsp</result>
+        </action>
+        
+        <action name="rechargeOrderAction_*" class="rechargeOrderAction" method="{1}">
+            <result name="addSuccess">/recharge/qrCode.jsp</result>
+            <result name="input">/recharge/recharge.jsp</result>
+            <result name="findOwnerUI">/recharge/recharge_record.jsp</result>
+            <result name="rechargeUI">/recharge/recharge.jsp</result>
+            <result name="findOwnerByStatusUI">/recharge/findOwnerByStatusUI.jsp</result>
+            <result name="findAllUI">/recharge/findAllUI.jsp</result>
+            <result name="findAllByStatusUI">/recharge/findAllByStatusUI.jsp</result>
+            <result name="tradePrecreateUI">/recharge/recharge.jsp</result>
+            <result name="returnUI">/alipay.trade.page.pay.jsp</result>
+            <result name="findTimeUI">/recharge/findTimeUI.jsp</result>
+            <result name="findAllByTimeUI">/recharge/findAllByTimeUI.jsp</result>
+            <result name="findCount">/recharge/findCount.jsp</result>
+        </action>
+    </package>
+</struts>

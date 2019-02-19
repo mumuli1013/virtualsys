@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-2-9 18:19:00 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lili.domain.RechargeOrder" table="recharge_order" catalog="vcdb">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="outTradeNo" type="string">
+            <column name="out_trade_no" unique="true">
+                <comment>
+                &#182;&#169;&#181;&#165;&#214;&#167;&#184;&#182;&#202;&#177;&#180;&#171;&#200;&#235;&#181;&#196;&#201;&#204;&#187;&#167;&#182;&#169;&#181;&#165;&#186;&#197;,&#186;&#205;&#214;&#167;&#184;&#182;&#177;&#166;&#189;&#187;&#210;&#215;&#186;&#197;&#178;&#187;&#196;&#220;&#205;&#172;&#202;&#177;&#206;&#170;&#191;&#213;&#161;&#163;</comment>
+            </column>
+        </property>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="rechargeUserId" type="java.lang.Integer">
+            <column name="recharge_user_id">
+                <comment>
+                &#179;&#228;&#214;&#181;&#208;&#233;&#196;&#226;&#177;&#210;&#181;&#189;&#207;&#224;&#185;&#216;&#181;&#196;&#211;&#195;&#187;&#167;&#213;&#203;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="VAmount" type="java.lang.Integer">
+            <column name="v_amount">
+                <comment>&#179;&#228;&#214;&#181;&#208;&#233;&#196;&#226;&#177;&#210;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="rmbAmount" type="java.lang.Integer">
+            <column name="rmb_amount">
+                <comment>
+                &#202;&#181;&#188;&#202;&#184;&#182;&#191;&#238;&#189;&#240;&#182;&#238;,&#181;&#165;&#206;&#187;&#202;&#199;&#212;&#170;,&#177;&#163;&#193;&#244;&#193;&#189;&#206;&#187;&#208;&#161;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>1.&#184;&#182;&#191;&#238;&#179;&#201;&#185;&#166; 3.&#184;&#182;&#191;&#238;&#202;&#167;&#176;&#220;</comment>
+            </column>
+        </property>
+        <property name="checkStatus" type="java.lang.Integer">
+            <column name="check_status">
+                <comment>&#182;&#212;&#213;&#203;&#215;&#180;&#204;&#172; 0-&#180;&#166;&#192;&#237;&#214;&#208; 1-&#179;&#201;&#185;&#166; 2-&#202;&#167;&#176;&#220;</comment>
+            </column>
+        </property>
+        <property name="rechargeTime" type="timestamp">
+            <column name="recharge_time" length="19">
+                <comment>&#214;&#167;&#184;&#182;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19">
+                <comment>&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

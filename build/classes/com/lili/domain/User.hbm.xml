@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-1-31 15:04:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lili.domain.User" table="user" catalog="vcdb">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="50" unique="true">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="50">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#220;&#194;&#235;&#163;&#172;MD5&#188;&#211;&#195;&#220;</comment>
+            </column>
+        </property>
+        <property name="VAmount" type="java.lang.Integer">
+            <column name="v_amount">
+                <comment>&#208;&#233;&#196;&#226;&#177;&#210;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="question" type="string">
+            <column name="question" length="100">
+                <comment>&#213;&#210;&#187;&#216;&#195;&#220;&#194;&#235;&#206;&#202;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="answer" type="string">
+            <column name="answer" length="100">
+                <comment>&#213;&#210;&#187;&#216;&#195;&#220;&#194;&#235;&#180;&#240;&#176;&#184;</comment>
+            </column>
+        </property>
+        <property name="role" type="java.lang.Integer">
+            <column name="role">
+                <comment>
+                0-&#179;&#172;&#188;&#182;&#185;&#220;&#192;&#237;&#212;&#177;,1-&#198;&#213;&#205;&#168;&#185;&#220;&#192;&#237;&#212;&#177;&#163;&#172;2-&#198;&#213;&#205;&#168;&#211;&#195;&#187;&#167;&#163;&#172;3-&#186;&#218;&#195;&#251;&#181;&#165;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="gameId" type="java.lang.Integer">
+            <column name="game_id">
+                <comment>&#198;&#213;&#205;&#168;&#185;&#220;&#192;&#237;&#212;&#177;&#203;&#249;&#176;&#243;&#182;&#168;&#181;&#196;&#211;&#206;&#207;&#183;Id</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#210;&#187;&#180;&#206;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

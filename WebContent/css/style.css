@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/*框架*/
+*{
+    margin:0;
+    padding:0;
+}
+body,li,p,a,span{
+    font-size: 14px;
+    font-family:微软雅黑,Tahoma,Helvetica,Arial,sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    display:block;
+    color: black;
+    text-decoration: none;
+}
+img{
+    border:none;
+}
+a,a:hover,a:active,a:visited,a:link,a:focus{
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+-webkit-tap-highlight-color: transparent;
+outline:none;
+background: none;
+text-decoration: none;
+}
+/*end 框架*/
+.float-l{
+    float: left;
+}
+.float-r{
+    float: right;
+}
+.clear-b{
+    clear: both;
+}
+.ta-c{
+    text-align: center;
+}
+.wrapper{
+	width:700px;
+	margin:30px auto 0 auto;
+}
+.wrap
+{
+	border:1px solid #a8a8a8;
+	width:1202px;
+	margin:30px auto;
+}
+/*框架*/
